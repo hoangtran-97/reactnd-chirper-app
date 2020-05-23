@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
+import Tweet from "./Tweet";
 
 class Dashboard extends Component {
     render() {
@@ -7,7 +8,7 @@ class Dashboard extends Component {
             <div>
                 <h3>Your timeline</h3>
                 {this.props.tweetIds.map((id) => (
-                    <p key={id}>{id}</p>
+                    <Tweet id={id} key={id}></Tweet>
                 ))}
             </div>
         );
