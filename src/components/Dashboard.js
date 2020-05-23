@@ -5,8 +5,9 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
+                <h3>Your timeline</h3>
                 {this.props.tweetIds.map((id) => (
-                    <div>{id}</div>
+                    <p key={id}>{id}</p>
                 ))}
             </div>
         );

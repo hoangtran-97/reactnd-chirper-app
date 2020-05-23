@@ -7,12 +7,11 @@ class App extends Component {
         this.props.dispatch(handleInitialData());
     }
     render() {
-        return (
-            <div>
-                <Dashboard></Dashboard>
-            </div>
-        );
+        return <div>{this.props.loading === true ? null : <Dashboard></Dashboard>}</div>;
     }
 }
 
+function mapStateToProps({authedUser}) {
+    return {loading: authedUser === null};
+}
 export default connect()(App);
